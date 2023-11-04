@@ -119,6 +119,7 @@ function createCSE(data) {
 	const titleElement = document.getElementById("cse-title")
 	const initialMessageElement = document.getElementById("initial-message")
 	const mainElement = document.getElementById("search")
+	const footerElement = document.getElementById("credits")
 	title = data[0];
 	initialMessage = data[1];
 	websites = data[2];
@@ -129,6 +130,7 @@ function createCSE(data) {
 	cseSyntax = " (site:" + data[2].join(" OR site:") + ")"
 	// On affiche le champ de recherche
 	mainElement.style.visibility = "visible";
+	footerElement.style.visibility = "visible";
 }
 
 // Gestion des événements "click" et "Enter"
