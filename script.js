@@ -4,14 +4,23 @@ const searchEngine = "https://zotop.zaclys.com/search?q=";
 // On peut définir la langue de recherche
 const defineLang = ":all";
 
-let md = `# Créez votre moteur de recherche
+// Par défaut on affiche ça :
+const cseDefault = `# Créez votre moteur de recherche
 
 > Ce site vous permet de créer un moteur de recherche personnalisé à partir d'une liste de sites.
 > 1. Créez un fichier sur CodiMD ou sur une forge.
 > 2. Ce fichier doit comporter : un titre, un bloc de citation qui constituera le message initial, et une liste de sites. Vous pouvez récupérer [ce modèle](https://codimd.apps.education.fr/b8KAltV2QQWR2rKhF_eYcg?both) ou bien regarder cet [exemple](https://eyssette.forge.aeif.fr/cse#https://eyssette.forge.aeif.fr/my-cse/intro-philo.md).
 > 3. Votre moteur de recherche sera alors disponible à l'adresse : https://eyssette.forge.aeif.fr/cse#URL (en remplaçant URL par l'URL de votre fichier).
+> 4. Si votre fichier n'est pas accessible : essayez de mettre \`https://api.allorigins.win/raw?url=\` avant votre URL
 
 - eyssette.github.io`;
+let md = cseDefault;
+
+// On peut définir des raccourcis vers des moteurs de recherche (si on veut forker le projet et avoir une URL plus courte à partager)
+
+const shortcuts = [
+	["intro-philo","https://raw.githubusercontent.com/eyssette/my-cse/main/intro-philo.md"],
+]
 
 let cseSyntax = "";
 
@@ -36,6 +45,11 @@ function getMarkdownContent() {
 				urlMD.replace("?edit", "").replace("?both", "").replace("?view", "") +
 				"/download";
 		}
+		// Vérification de la présence d'un raccourci
+		shortcut = shortcuts.find(element => element[0]==urlMD)
+		if (shortcut) {
+			urlMD = shortcut[1]
+		}
 		// Récupération du contenu du fichier
 		fetch(urlMD)
 			.then((response) => response.text())
@@ -44,7 +58,12 @@ function getMarkdownContent() {
 				cseData = parseMarkdown(md);
 				createCSE(cseData);
 			})
-			.catch((error) => console.error(error));
+			.catch((error) => {
+				cseData = parseMarkdown(cseDefault);
+				createCSE(cseData);
+				alert("Il y a une erreur dans l'URL. Merci de la vérifier et de vous assurer que le fichier est bien accessible.")
+				console.log(error);
+			});
 	} else {
 		cseData = parseMarkdown(md);
 		createCSE(cseData);
