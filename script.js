@@ -1,10 +1,8 @@
-// On peut définir ici le moteur de recherche que l'on va utiliser
-// Ce moteur de recherche doit accepter la syntaxe "(site:URL OR site:URL)"
+// On peut définir ici le moteur de recherche Searx que l'on va utiliser
 const searchEngine = "https://zotop.zaclys.com/search?q=";
 
-// Si c'est un moteur de recherche Searx, on peut définir un paramètre pour la langue
-const searxSearchEngine = true
-const defineLang = searxSearchEngine ? ":all" : "";
+// On peut définir la langue de recherche
+const defineLang = ":all";
 
 let md = `# Créez votre moteur de recherche
 
