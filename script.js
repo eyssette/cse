@@ -154,10 +154,14 @@ function search(searchInput) {
 	searchText = encodeURI(searchInput) + " " + defineLang + cseSyntax
 	const urlSearch = searchEngine + searchText;
 	// On lance la page de recherche
+	localStorage.setItem('searchLaunched', 'true');
 	window.location.href = urlSearch;
 }
 
-window.onpopstate = () => {
-	loaderElement.style.display = "none"
-	waitMessageElement.style.visibility = 'hidden';
+// Si on revient sur la page après une recherche, il faut cacher le message d'attente des résultats
+window.onload=() => {
+	if (localStorage.getItem('searchLaunched')) {
+		loaderElement.style.display = "none"
+		waitMessageElement.style.visibility = 'hidden';
+	}
 }
