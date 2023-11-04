@@ -65,3 +65,18 @@ footer a {
 footer a:hover {
 	text-decoration: underline;
 }
+
+@media screen and (max-width: 500px) {
+	header {
+		width: initial !important;
+		max-width: initial !important;
+	}
+    button {
+        display:block;
+        margin: 1em auto;
+    }
+    label {
+        display:block;
+        margin-bottom:0.5em;
+    }
+}
