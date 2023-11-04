@@ -158,10 +158,7 @@ function search(searchInput) {
 	window.location.href = urlSearch;
 }
 
-// Si on revient sur la page après une recherche, il faut cacher le message d'attente des résultats
-window.onload=() => {
-	if (localStorage.getItem('searchLaunched')) {
-		loaderElement.style.display = "none"
-		waitMessageElement.style.visibility = 'hidden';
-	}
+if (localStorage.getItem('searchLaunched')) {
+	loaderElement.style.display = "none"
+	waitMessageElement.style.visibility = 'hidden';
 }
