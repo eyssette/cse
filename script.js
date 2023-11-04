@@ -157,3 +157,7 @@ function search(searchInput) {
 	window.location.href = urlSearch;
 }
 
+window.onpopstate = () => {
+	loaderElement.style.display = "none"
+	waitMessageElement.style.visibility = 'hidden';
+}
