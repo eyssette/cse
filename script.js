@@ -158,7 +158,7 @@ function search(searchInput) {
 	window.location.href = urlSearch;
 }
 
-if (localStorage.getItem('searchLaunched')) {
-	loaderElement.style.display = "none"
-	waitMessageElement.style.visibility = 'hidden';
-}
+window.addEventListener( "pageshow", () => {
+		loaderElement.style.display = "none"
+		waitMessageElement.style.visibility = 'hidden';
+  });
