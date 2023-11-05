@@ -1,6 +1,9 @@
 // On peut définir ici le moteur de recherche Searx que l'on va utiliser
 const searchEngine = "https://zotop.zaclys.com/search?q=";
 
+// On peut désactiver la recherche sur certains moteurs
+const disabledEngines = "&disabled_engines=brave" // Brave renvoie souvent des résultats trop larges
+
 // On peut définir la langue de recherche
 const defineLang = ":all";
 
@@ -171,7 +174,7 @@ function search(searchInput) {
 	loaderElement.style.display = "block"
 	waitMessageElement.style.visibility = 'visible';
 	// On configure l'URL de notre moteur de recherche
-	searchText = encodeURI(searchInput) + " " + defineLang + cseSyntax
+	searchText = encodeURI(searchInput) + " " + defineLang + cseSyntax + disabledEngines
 	const urlSearch = searchEngine + searchText;
 	// On lance la page de recherche
 	localStorage.setItem('searchLaunched', 'true');
