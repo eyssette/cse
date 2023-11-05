@@ -20,6 +20,7 @@ let md = cseDefault;
 
 const shortcuts = [
 	["intro-philo","https://raw.githubusercontent.com/eyssette/my-cse/main/intro-philo.md"],
+	["recherche-philo","https://raw.githubusercontent.com/eyssette/my-cse/main/recherche-philo.md"]
 ]
 
 let cseSyntax = "";
