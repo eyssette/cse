@@ -136,6 +136,8 @@ const sendButton = document.getElementById("send-button");
 const waitMessageElement = document.getElementById("wait-message")
 const loaderElement = document.getElementById("loader")
 
+userInput.focus();
+
 function createCSE(data) {
 	const titleElement = document.getElementById("cse-title")
 	const initialMessageElement = document.getElementById("initial-message")
