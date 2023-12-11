@@ -146,14 +146,14 @@ function createCSE(data) {
 	const initialMessageElement = document.getElementById("initial-message")
 	const mainElement = document.getElementById("search")
 	const footerElement = document.getElementById("credits")
-	title = data[0];
-	initialMessage = data[1];
-	websites = data[2];
+	const title = data[0];
+	const initialMessage = data[1];
+	const websites = data[2];
 	// On change le titre et le message initial avec le contenu personnalisé
 	titleElement.innerHTML = title;
 	initialMessageElement.innerHTML = initialMessage;
 	// On crée la syntaxe de recherche pour le moteur de recherche personnalisé
-	cseSyntax = " (site:" + data[2].join(" OR site:") + ")"
+	cseSyntax = " (site:" + websites.join(" OR site:") + ")"
 	// On affiche le champ de recherche
 	mainElement.style.visibility = "visible";
 	footerElement.style.visibility = "visible";
