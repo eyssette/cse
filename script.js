@@ -6,7 +6,7 @@ const searchEngine = "https://paulgo.io/search?q=";
 const setEngines = "&engines=google&disabled_engines=brave" // Brave renvoie souvent des résultats trop larges
 
 // On peut définir la langue de recherche
-const defineLang = "&language=all";
+const defineLang = "&language=auto";
 
 // Par défaut on affiche ça :
 const cseDefault = `# Créez votre moteur de recherche
