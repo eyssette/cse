@@ -104,8 +104,8 @@ footer a:hover {
 
 @media screen and (max-width: 500px) {
 	header {
-		width: initial !important;
-		max-width: initial !important;
+		width: 95vw !important;
+		max-width: 95vw !important;
 	}
 	main {
 		font-size: 1.2em;
@@ -119,13 +119,13 @@ footer a:hover {
 		display: block;
 		margin-bottom: 0.5em;
 	}
+	input {
+		max-width: 85vw;
+	}
 	#wait-message {
 		margin-top: 0em;
 	}
 	footer {
 		font-size: 1em;
-	}
-	footer a {
-		display: inline-block;
 	}
 }
