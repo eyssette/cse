@@ -1,0 +1,5 @@
+# ignore minified files
+*.min.css
+*.min.js
+# ignore markdown files
+*.md
