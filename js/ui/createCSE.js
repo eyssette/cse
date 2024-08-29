@@ -14,11 +14,11 @@ export function createCSE(data) {
 	titleElement.innerHTML = title;
 	initialMessageElement.innerHTML = initialMessage;
 	// On crée la syntaxe de recherche pour le moteur de recherche personnalisé
-	const cseSyntax = " (site:" + websites.join(" OR site:") + ")";
+	const listWebsites = " (site:" + websites.join(" OR site:") + ")";
 	// On affiche le champ de recherche
 	mainElement.style.visibility = "visible";
 	footerElement.style.visibility = "visible";
 	userInput.focus();
 
-	handleEvents(userInput, sendButton, cseSyntax);
+	handleEvents(userInput, sendButton, listWebsites);
 }

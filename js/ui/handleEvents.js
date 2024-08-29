@@ -1,13 +1,13 @@
 import { launchSearch } from "./launchSearch.js";
 
-export function handleEvents(userInput, sendButton, cseSyntax) {
+export function handleEvents(userInput, sendButton, listWebsites) {
 	userInput.addEventListener("keypress", (event) => {
 		if (event.key === "Enter") {
 			sendButton.click();
 		}
 	});
 	sendButton.addEventListener("click", () => {
-		const userInputText = userInput.value;
-		launchSearch(userInputText, cseSyntax);
+		const userInputText = userInput.value.replace("\n", "");
+		launchSearch(userInputText, listWebsites);
 	});
 }

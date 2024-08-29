@@ -1,6 +1,6 @@
 import { config } from "../config.js";
 
-export function launchSearch(searchInput, cseSyntax) {
+export function launchSearch(searchInput, listWebsites) {
 	const waitMessageElement = document.getElementById("wait-message");
 	const loaderElement = document.getElementById("loader");
 	// On affiche un message d'attente des résultats
@@ -8,11 +8,12 @@ export function launchSearch(searchInput, cseSyntax) {
 	waitMessageElement.style.visibility = "visible";
 	// On configure l'URL de notre moteur de recherche
 	const searchText =
-		encodeURI(searchInput) +
+		config.setEngines +
 		" " +
-		cseSyntax +
+		encodeURI(searchInput) +
+		listWebsites +
 		config.defineLang +
-		config.setEngines;
+		config.searchMode;
 	const urlSearch = config.searchEngine + searchText;
 	// On lance la page de recherche
 	localStorage.setItem("searchLaunched", "true");
