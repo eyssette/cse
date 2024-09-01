@@ -9,7 +9,7 @@ config.searchEngine = "https://paulgo.io/search?q=";
 
 // On peut sélectionner les moteurs de recherche utilisés par Searx
 // go = google, goi : google images, yt : youtube, ptb : peertube
-config.setEngines = "!go !goi";
+config.setEngines = "!go ";
 
 // On peut définir des paramètres de recherche
 // safesearch = 2 => mode strict
