@@ -1,6 +1,6 @@
 # Créez votre moteur de recherche
 
-> **CSE** est un outil libre et gratuit qui permet de créer un moteur de recherche personnalisé à partir d'une liste de sites.
+> **CSE** (_Custom Search Engine_) est un outil libre et gratuit qui permet de créer un moteur de recherche personnalisé à partir d'une liste de sites.
 >
 > 1. Créez un fichier sur un service comme [CodiMD](https://codimd.apps.education.fr/), [Digipad](https://digipad.app/), [Framapad](https://framapad.org/abc/fr/) … ou sur la [Forge](https://forge.apps.education.fr/).
 > 2. Ce fichier doit suivre une syntaxe particulière. Vous pouvez récupérer [ce modèle](https://codimd.apps.education.fr/b8KAltV2QQWR2rKhF_eYcg?both) ou bien regarder cet [exemple](https://cse.forge.apps.education.fr/#https://eyssette.forge.apps.education.fr/my-cse/intro-philo.md).
