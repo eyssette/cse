@@ -29,6 +29,10 @@ config.shortcuts = [
 		"https://raw.githubusercontent.com/eyssette/my-cse/main/recherche-philo.md",
 	],
 	["drane", "https://raw.githubusercontent.com/eyssette/my-cse/main/drane.md"],
+	[
+		"pourlaclasse",
+		"https://codimd.apps.education.fr/QNKTdG5ZROyixxq1EJM9DQ/download",
+	],
 ];
 
 // Un proxy si l'URL du fichier Markdown n'est pas accessible
