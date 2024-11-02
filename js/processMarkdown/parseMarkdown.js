@@ -7,13 +7,19 @@ const regexIsCSS = /<style[^>]*>([\s\S]*?)<\/style>/gi;
 
 export function parseMarkdown(markdownContent) {
 	const matchCSS = markdownContent.match(regexIsCSS);
-	const styleCSS = matchCSS ? matchCSS[0].replace(/<\/?style>/g, "") : "";
+	let styleCSS = "";
+	if (matchCSS) {
+		styleCSS = matchCSS[0];
+		markdownContent = markdownContent.replace(styleCSS, "");
+		styleCSS = styleCSS.replace(/<\/?style>/g, "");
+	}
 	const lines = markdownContent.split("\n");
 	let cseData = [];
 	let cseTitle = "Mon moteur de recherche personnalisé";
 	let initialMessageComputed = false;
 	let initialMessageContent = [];
 	let listWebsites = [];
+	let additionalContent = [];
 
 	for (let line of lines) {
 		// On parcourt le contenu du fichier ligne par ligne
@@ -31,6 +37,11 @@ export function parseMarkdown(markdownContent) {
 				initialMessageComputed = true;
 				const website = matchIsWebsite[1];
 				listWebsites.push(website);
+			} else {
+				// Tout ce qui vient après la liste des sites est considéré comme du contenu additionnel
+				if (listWebsites.length > 0) {
+					additionalContent.push(line);
+				}
 			}
 		}
 	}
@@ -44,6 +55,7 @@ export function parseMarkdown(markdownContent) {
 		markdownToHTML(initialMessageContent.join("\n")),
 		listWebsites,
 		styleCSS,
+		markdownToHTML(additionalContent.join("\n")),
 	];
 	return cseData;
 }

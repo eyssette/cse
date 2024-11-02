@@ -5,16 +5,22 @@ export function createCSE(data) {
 	const sendButton = document.getElementById("send-button");
 	const titleElement = document.getElementById("cse-title");
 	const initialMessageElement = document.getElementById("initial-message");
+	const additionalContentElement =
+		document.getElementById("additional-content");
 	const mainElement = document.getElementById("search");
 	const footerElement = document.getElementById("credits");
 	const title = data[0];
 	const initialMessage = data[1];
 	const websites = data[2];
 	const styleCSS = data[3].trim();
+	const additionalContent = data[4].trim();
 	if (styleCSS !== "") {
 		const styleElement = document.createElement("style");
 		styleElement.textContent = styleCSS;
 		document.head.appendChild(styleElement);
+	}
+	if (additionalContent != "") {
+		additionalContentElement.innerHTML = additionalContent;
 	}
 	// On change le titre et le message initial avec le contenu personnalisé
 	titleElement.innerHTML = title;
