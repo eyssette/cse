@@ -1,9 +1,13 @@
 import { markdownToHTML } from "./markdownToHTML.js";
 
 // Expression régulière pour chercher les URLs des sites (dans une liste d'éléments)
-const regex = /^- +(.+)/;
+const regexIsWebsite = /^- +(.+)/;
+
+const regexIsCSS = /<style[^>]*>([\s\S]*?)<\/style>/gi;
 
 export function parseMarkdown(markdownContent) {
+	const matchCSS = markdownContent.match(regexIsCSS);
+	const styleCSS = matchCSS ? matchCSS[0].replace(/<\/?style>/g, "") : "";
 	const lines = markdownContent.split("\n");
 	let cseData = [];
 	let cseTitle = "Mon moteur de recherche personnalisé";
@@ -21,11 +25,11 @@ export function parseMarkdown(markdownContent) {
 			line = line.replace(/^>\s?/, "").trim();
 			initialMessageContent.push(line);
 		} else {
-			const match = line.match(regex);
+			const matchIsWebsite = line.match(regexIsWebsite);
 			// Récupération de la liste des sites pour le moteur de recherche
-			if (match) {
+			if (matchIsWebsite) {
 				initialMessageComputed = true;
-				const website = match[1];
+				const website = matchIsWebsite[1];
 				listWebsites.push(website);
 			}
 		}
@@ -39,6 +43,7 @@ export function parseMarkdown(markdownContent) {
 		cseTitle,
 		markdownToHTML(initialMessageContent.join("\n")),
 		listWebsites,
+		styleCSS,
 	];
 	return cseData;
 }

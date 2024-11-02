@@ -10,6 +10,12 @@ export function createCSE(data) {
 	const title = data[0];
 	const initialMessage = data[1];
 	const websites = data[2];
+	const styleCSS = data[3].trim();
+	if (styleCSS !== "") {
+		const styleElement = document.createElement("style");
+		styleElement.textContent = styleCSS;
+		document.head.appendChild(styleElement);
+	}
 	// On change le titre et le message initial avec le contenu personnalisé
 	titleElement.innerHTML = title;
 	initialMessageElement.innerHTML = initialMessage;
