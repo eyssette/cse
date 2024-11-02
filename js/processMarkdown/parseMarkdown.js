@@ -40,7 +40,7 @@ export function parseMarkdown(markdownContent) {
 	}
 
 	cseData = [
-		cseTitle,
+		markdownToHTML(cseTitle).replace(/<\/?p>/g, ""),
 		markdownToHTML(initialMessageContent.join("\n")),
 		listWebsites,
 		styleCSS,
