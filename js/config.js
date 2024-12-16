@@ -36,4 +36,4 @@ config.shortcuts = [
 ];
 
 // Un proxy si l'URL du fichier Markdown n'est pas accessible
-config.corsProxy = "https://corsproxy.io/?";
+config.corsProxy = "https://corsproxy.io/?url=";
