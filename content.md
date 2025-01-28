@@ -24,7 +24,7 @@ Des moteurs de recherche créés avec CSE :
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top:2em;
+	margin-top:-1em;
 }
 #additional-content ol {
 	margin-top:0;
@@ -37,5 +37,8 @@ Des moteurs de recherche créés avec CSE :
 label {
     margin-top: 1em;
     display: inline-block;
+}
+main > * {
+    display: none;
 }
 </style>
