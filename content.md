@@ -10,3 +10,27 @@
 <!-- La liste des sites pour votre moteur de recherche : -->
 
 - *.apps.education.fr
+
+Des moteurs de recherche créés avec CSE :
+
+1. [Introduction à la philosophie](https://cse.forge.apps.education.fr/#intro-philo)
+2. [Philosophie - niveau académique](https://cse.forge.apps.education.fr/#recherche-philo)
+3. [Pour la classe : sites institutionnels](https://cse.forge.apps.education.fr/#pourlaclasse)
+4. [Sites des DRANE](https://cse.forge.apps.education.fr/#drane)
+
+<style>
+#additional-content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top:2em;
+}
+#additional-content ol {
+	margin-top:0;
+}
+#additional-content li{
+	text-align:left;
+	margin-top: 0.5em;
+	padding-left: 0.5em;
+}
+</style>
