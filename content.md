@@ -6,6 +6,7 @@
 > 2. Ce fichier doit suivre une syntaxe particulière. Vous pouvez récupérer [ce modèle](https://codimd.apps.education.fr/b8KAltV2QQWR2rKhF_eYcg?both) ou bien regarder cet [exemple](https://cse.forge.apps.education.fr/#https://eyssette.forge.apps.education.fr/my-cse/intro-philo.md).
 > 3. La recherche est plus pertinente si votre liste de sites n'est pas trop longue. N'hésitez pas à utiliser le caractère générique `*`. Par exemple : `ac-*.fr` renvoie à `ac-lyon.fr`, `ac-grenoble.fr`, etc.
 > 4. Votre moteur de recherche sera disponible à l'adresse : `https://cse.forge.apps.education.fr/#URL_DE_VOTRE_FICHIER_MARKDOWN`
+> <label for="urlInput">Entrez l'URL de votre fichier Markdown :</label> <input type="url" id="urlInput" placeholder="Votre URL"> <button id="okButton">OK</button>
 
 <!-- La liste des sites pour votre moteur de recherche : -->
 
@@ -32,5 +33,9 @@ Des moteurs de recherche créés avec CSE :
 	text-align:left;
 	margin-top: 0.5em;
 	padding-left: 0.5em;
+}
+label {
+    margin-top: 1em;
+    display: inline-block;
 }
 </style>

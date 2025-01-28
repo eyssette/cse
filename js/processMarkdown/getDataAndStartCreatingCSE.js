@@ -25,5 +25,24 @@ export function getDataAndStartCreatingCSE(md) {
 	} else {
 		const data = parseMarkdown(md);
 		createCSE(data);
+		const urlInput = document.getElementById("urlInput");
+		const okButton = document.getElementById("okButton");
+
+		// Fonction générique pour rediriger vers une URL
+		function redirectToUrl(inputElement) {
+			const userUrl = inputElement.value.trim();
+			if (userUrl) {
+				const fullUrl = window.location.origin + `/#${userUrl}`;
+				window.open(fullUrl, "_blank");
+			} else {
+				alert("Veuillez entrer une URL valide.");
+			}
+		}
+		okButton.addEventListener("click", () => redirectToUrl(urlInput));
+		urlInput.addEventListener("keypress", (event) => {
+			if (event.key === "Enter") {
+				redirectToUrl(urlInput);
+			}
+		});
 	}
 }
