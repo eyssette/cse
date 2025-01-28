@@ -1,4 +1,5 @@
 import { handleEvents } from "./handleEvents.js";
+import { openLinksInNewTab } from "../utils/urls.js";
 
 export function createCSE(data) {
 	const userInput = document.getElementById("search-input");
@@ -31,6 +32,9 @@ export function createCSE(data) {
 	mainElement.style.visibility = "visible";
 	footerElement.style.visibility = "visible";
 	userInput.focus();
+
+	const links = document.querySelectorAll("a");
+	openLinksInNewTab(links);
 
 	handleEvents(userInput, sendButton, listWebsites);
 }

@@ -52,3 +52,17 @@ export function handleURL(url) {
 	}
 	return url;
 }
+
+export function openLinksInNewTab(links) {
+	// On filtre les liens pour que les liens internes ne s'ouvrent pas dans un autre onglet
+	links = Array.from(links);
+	links = links.filter((link) => {
+		const href = link.getAttribute("href");
+		if (!href) return false;
+		return !href.startsWith("/");
+	});
+	links.forEach((link) => {
+		link.setAttribute("target", "_blank");
+		link.setAttribute("rel", "noopener noreferrer");
+	});
+}
