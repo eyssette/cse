@@ -1,9 +1,10 @@
 export let config = {};
 
 // On peut définir ici le moteur de recherche Searx que l'on va utiliser
-config.searchEngine = "https://paulgo.io/search?q=";
-//config.searchEngine = "https://searx.mha.fi/search?q=";
-//config.searchEngine = "https://zotop.zaclys.com/search?q=";
+config.searchEngine = "https://search.indst.eu/search?q=";
+// https://paulgo.io/search?q=
+// https://searx.mha.fi/search?q=
+// https://zotop.zaclys.com/search?q=
 
 // Attention, certains moteurs de recherche ne permettent pas d'utiliser toutes les options ci-dessous
 
