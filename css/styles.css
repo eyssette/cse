@@ -47,6 +47,10 @@ main {
 	visibility: hidden;
 }
 
+input {
+	height: 1em;
+}
+
 #additional-content {
 	margin-top: 3em;
 }
