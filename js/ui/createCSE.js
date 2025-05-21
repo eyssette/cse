@@ -1,5 +1,7 @@
 import { handleEvents } from "./handleEvents.js";
 import { openLinksInNewTab } from "../utils/urls.js";
+import { config } from "../config.js";
+import { fetchBestSearxInstances } from "./fetchBestSearxInstance.js";
 
 export function createCSE(data) {
 	const userInput = document.getElementById("search-input");
@@ -36,5 +38,11 @@ export function createCSE(data) {
 	const links = document.querySelectorAll("a");
 	openLinksInNewTab(links);
 
-	handleEvents(userInput, sendButton, listWebsites);
+	// On récupère le meilleur serveur Searx disponible
+	fetchBestSearxInstances().then((instances) => {
+		let bestSearXinstance = instances.length
+			? instances[0][0]
+			: config.defaultSearchEngine;
+		handleEvents(userInput, sendButton, listWebsites, bestSearXinstance);
+	});
 }

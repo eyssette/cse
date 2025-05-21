@@ -1,6 +1,11 @@
 import { launchSearch } from "./launchSearch.js";
 
-export function handleEvents(userInput, sendButton, listWebsites) {
+export function handleEvents(
+	userInput,
+	sendButton,
+	listWebsites,
+	bestSearXinstance,
+) {
 	userInput.addEventListener("keypress", (event) => {
 		if (event.key === "Enter") {
 			sendButton.click();
@@ -8,6 +13,6 @@ export function handleEvents(userInput, sendButton, listWebsites) {
 	});
 	sendButton.addEventListener("click", () => {
 		const userInputText = userInput.value.replace("\n", "");
-		launchSearch(userInputText, listWebsites);
+		launchSearch(userInputText, listWebsites, bestSearXinstance);
 	});
 }
