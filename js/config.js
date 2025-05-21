@@ -1,7 +1,7 @@
 export let config = {};
 
 // On peut définir ici le moteur de recherche Searx que l'on va utiliser
-config.searchEngine = "https://search.indst.eu/search?q=";
+config.searchEngine = "https://opnxng.com/search?q=";
 // https://paulgo.io/search?q=
 // https://searx.mha.fi/search?q=
 // https://zotop.zaclys.com/search?q=
