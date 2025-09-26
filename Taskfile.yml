@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  build:
+    aliases:
+      - default
+    cmds:
+      - task: push
+
+  push:
+    vars:
+      GIT_REPO_NAMES: [apps, cse, github]
+    cmds:
+      - for: { var: GIT_REPO_NAMES }
+        cmd: git push {{.ITEM}} && git push {{.ITEM}} --tags
