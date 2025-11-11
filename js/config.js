@@ -15,7 +15,7 @@ config.searchPrefix = "";
 // config.searchPrefix = "search?q=";
 
 // On peut sélectionner les moteurs de recherche utilisés par Searx
-// go = google, goi : google images, yt : youtube, ptb : peertube
+// "!go " = google, "!goi " : google images, "!yt " : youtube, "!ptb " : peertube
 config.setEngines = "";
 
 // On peut définir des paramètres de recherche

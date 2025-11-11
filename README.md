@@ -1,4 +1,4 @@
-# CSE : Custom Searx Engine
+# CSE : Custom Search Engine
 
 Un outil pour créer un moteur de recherche personnalisé à partir d'une liste de sites.
 
@@ -29,9 +29,9 @@ Attention, si vous rajoutez des fichiers, il faudra aussi modifier le fichier `.
 
 ## Crédits
 
-_Custom Searx Engine_ est un outil libre et gratuit sous licence MIT.
+_Custom Search Engine_ est un outil libre et gratuit sous licence MIT.
 
 Il utilise d'autres logiciels libres :
 
 - [showdown](https://github.com/showdownjs/showdown) pour la conversion du markdown en html
-- [SearXNG](https://github.com/searxng/searxng) comme moteur de recherche ; par défaut l'instance Searx est celle de [paulgo](https://paulgo.io/search).
+- [SearXNG](https://github.com/searxng/searxng) si on le choisit comme moteur de recherche. Mais ce n'est plus le moteur de recherche par défaut, depuis un bug pas encore corrigé.
