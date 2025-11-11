@@ -19,6 +19,11 @@ Des moteurs de recherche créés avec CSE :
 3. [Pour la classe : sites institutionnels](https://cse.forge.apps.education.fr/#pourlaclasse)
 4. [Sites des DRANE](https://cse.forge.apps.education.fr/#drane)
 
+<div id="warning">
+  <p>⚠️ Le moteur de recherche CSE est temporairement indisponible</p>
+  <p>Un bug dans l’application <strong>SearXNG</strong>, utilisée par CSE pour afficher les résultats, est en cours de résolution. Merci de votre patience.</p>
+</div>
+
 <style>
 #additional-content{
 	display: flex;
