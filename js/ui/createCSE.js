@@ -38,11 +38,21 @@ export function createCSE(data) {
 	const links = document.querySelectorAll("a");
 	openLinksInNewTab(links);
 
-	// On récupère le meilleur serveur Searx disponible
-	fetchBestSearxInstances().then((instances) => {
-		let bestSearXinstance = instances.length
-			? instances[0][0]
-			: config.defaultSearchEngine;
-		handleEvents(userInput, sendButton, listWebsites, bestSearXinstance);
-	});
+	// Si un moteur de recherche par défaut est défini, on l’utilise directement
+	if (config.useDefaultSearchEngine) {
+		handleEvents(
+			userInput,
+			sendButton,
+			listWebsites,
+			config.defaultSearchEngine,
+		);
+	} else {
+		// Sinon, on récupère le meilleur serveur Searx disponible
+		fetchBestSearxInstances().then((instances) => {
+			const bestSearXinstance = instances.length
+				? instances[0][0]
+				: config.defaultSearchEngine;
+			handleEvents(userInput, sendButton, listWebsites, bestSearXinstance);
+		});
+	}
 }

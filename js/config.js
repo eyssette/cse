@@ -1,6 +1,10 @@
 export let config = {};
 
-// On peut définir ici le moteur de recherche Searx que l'on va utiliser
+// Par défaut, l'application recherche le meilleur moteur de recherche disponible
+// Mais on peut définir ici un moteur de recherche spécifique si l'on souhaite
+// utiliser un moteur précis.
+// Ce moteur de recherche sera aussi utilisé si la recherche du meilleur moteur n'a pas fonctionné
+config.useDefaultSearchEngine = false;
 config.defaultSearchEngine = "https://opnxng.com/";
 // https://paulgo.io/search?q=
 // https://searx.mha.fi/search?q=
