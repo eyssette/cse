@@ -14,7 +14,7 @@ export function launchSearch(searchInput, listWebsites, bestSearXinstance) {
 		listWebsites +
 		config.defineLang +
 		config.searchMode;
-	const urlSearch = bestSearXinstance + "search?q=" + searchText;
+	const urlSearch = bestSearXinstance + config.searchPrefix + searchText;
 	// On lance la page de recherche
 	localStorage.setItem("searchLaunched", "true");
 	window.location.href = urlSearch;

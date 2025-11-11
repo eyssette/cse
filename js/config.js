@@ -4,17 +4,19 @@ export let config = {};
 // Mais on peut définir ici un moteur de recherche spécifique si l'on souhaite
 // utiliser un moteur précis.
 // Ce moteur de recherche sera aussi utilisé si la recherche du meilleur moteur n'a pas fonctionné
-config.useDefaultSearchEngine = false;
-config.defaultSearchEngine = "https://opnxng.com/";
-// https://paulgo.io/search?q=
-// https://searx.mha.fi/search?q=
-// https://zotop.zaclys.com/search?q=
+config.useDefaultSearchEngine = true;
+config.defaultSearchEngine = "https://www.ecosia.org/search?method=index&q=";
 
 // Attention, certains moteurs de recherche ne permettent pas d'utiliser toutes les options ci-dessous
 
+// On définit ici le préfixe utilisé
+config.searchPrefix = "";
+// Pour les moteurs de recherche Searx :
+// config.searchPrefix = "search?q=";
+
 // On peut sélectionner les moteurs de recherche utilisés par Searx
 // go = google, goi : google images, yt : youtube, ptb : peertube
-config.setEngines = "!go ";
+config.setEngines = "";
 
 // On peut définir des paramètres de recherche
 // safesearch = 2 => mode strict
